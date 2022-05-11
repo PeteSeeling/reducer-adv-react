@@ -1,10 +1,13 @@
 import { useEffect, useState, useReducer } from 'react';
 
 const pinkRGB = `rgb(236, 72, 153)`
-const initailState = { count: 0 }
-const green = `rgb(52, 211, 153)`
-const red = `rgb(239, 68, 68)`
-const pink = `rgb(236, 72, 153)`
+const color = {
+  green: `rgb(52, 211, 153)`,
+   red: `rgb(239, 68, 68)`,
+   pink: `rgb(236, 72, 153)`
+  }
+const initailState = { count: 0, currentColor: color.pink}
+
 
 
 function reducer(state, action){
