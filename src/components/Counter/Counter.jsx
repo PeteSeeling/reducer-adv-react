@@ -2,6 +2,9 @@ import { useEffect, useState, useReducer } from 'react';
 
 const pinkRGB = `rgb(236, 72, 153)`
 const initailState = { count: 0 }
+const green = `rgb(52, 211, 153)`
+const red = `rgb(239, 68, 68)`
+const pink = `rgb(236, 72, 153)`
 
 
 function reducer(state, action){
@@ -22,21 +25,19 @@ export default function Counter() {
   const [state, dispatch] = useReducer(reducer, initailState)
   const [currentColor, setCurrentColor] = useState(pinkRGB)
 
-  
   useEffect(() => {
     if (state === 0) {
       setCurrentColor(pinkRGB)
     }
 
     if (state > 0) {
-      setCurrentColor(`rgb(52, 211, 153)`)
+      setCurrentColor(green)
     }
 
     if (state < 0) {
-      setCurrentColor(`rgb(239, 68, 68)`)
+      setCurrentColor(red)
     }
   }, [state])
-
 
 return (
   <main className="bg-black bg-opacity-90 min-h-screen flex flex-col items-center justify-center text-4xl text-pink-500">
