@@ -6,7 +6,8 @@ const color = {
    red: `rgb(239, 68, 68)`,
    pink: `rgb(236, 72, 153)`
   }
-const initailState = { count: 0, currentColor: color.pink}
+
+const initailState = { count: 0, currentColor: color.green}
 
 
 
@@ -34,17 +35,17 @@ export default function Counter() {
     }
 
     if (state > 0) {
-      setCurrentColor(green)
+      setCurrentColor(color.green)
     }
 
     if (state < 0) {
-      setCurrentColor(red)
+      setCurrentColor(color.red)
     }
   }, [state])
 
 return (
   <main className="bg-black bg-opacity-90 min-h-screen flex flex-col items-center justify-center text-4xl text-pink-500">
-    <h1 className="mb-5" style={{ color: currentColor }}>
+    <h1 className="mb-5" style={{ color: state.currentColor }}>
       {state.count}
     </h1>
     <div className="flex w-1/2 justify-around">
@@ -53,6 +54,7 @@ return (
         type="button"
         onClick={() => dispatch({ type: 'increment' })}
         aria-label="increment"
+        style={{ backgroundColor: color.green}}
       >
         Increment
       </button>
@@ -61,6 +63,7 @@ return (
         type="button"
         onClick={() => dispatch({ type: 'decrement' })}
         aria-label="decrement"
+        style={{ backgroundColor: color.red}}
       >
         Decrement
       </button>
@@ -69,6 +72,7 @@ return (
         type="button"
         aria-label="reset"
         onClick={() => dispatch({ type: 'reset' })}
+        style={{ backgroundColor: color.pink}}
       >
         Reset
       </button>
