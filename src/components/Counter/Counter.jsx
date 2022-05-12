@@ -38,7 +38,7 @@ return (
     </h1>
     <div className="flex w-1/2 justify-around">
       <button
-        className="text-green-400 border-2 border-green-400 p-3"
+        id='button'
         type="button"
         onClick={() => dispatch({ type: 'increment' })}
         aria-label="increment"
@@ -47,7 +47,6 @@ return (
         Increment
       </button>
       <button
-        className="text-red-500 border-2 border-red-500 p-2"
         type="button"
         onClick={() => dispatch({ type: 'decrement' })}
         aria-label="decrement"
@@ -56,7 +55,6 @@ return (
         Decrement
       </button>
       <button
-        className="text-pink-500 border-2 border-pink-500 p-2"
         type="button"
         aria-label="reset"
         onClick={() => dispatch({ type: 'reset' })}
