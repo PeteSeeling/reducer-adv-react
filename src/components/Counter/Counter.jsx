@@ -1,4 +1,4 @@
-import { useEffect, useState, useReducer } from 'react';
+import { useReducer } from 'react';
 
 const color = {
   green: `rgb(52, 211, 153)`,
@@ -29,24 +29,8 @@ switch (action.type) {
 }
 
 export default function Counter() {
-  // const [count, setCount] = useState(0)
   const [state, dispatch] = useReducer(reducer, initailState)
-  const [currentColor, setCurrentColor] = useState(color.pink)
-
-  // useEffect(() => {
-  //   if (state === 0) {
-  //     setCurrentColor(pinkRGB)
-  //   }
-
-  //   if (state > 0) {
-  //     setCurrentColor(color.green)
-  //   }
-
-  //   if (state < 0) {
-  //     setCurrentColor(color.red)
-  //   }
-  // }, [state])
-
+ 
 return (
   <main className="bg-black bg-opacity-90 min-h-screen flex flex-col items-center justify-center text-4xl text-pink-500">
     <h1 className="mb-5" style={{ color: state.currentColor }}>
@@ -84,22 +68,5 @@ return (
   </main>
 )
 }
-
-
-
-
-
-
-
-  // const increment = () => {
-  //   setCount((prevState) => prevState + 1)
-  // }
-
-  // const decrement = () => {
-  //   setCount((prevState) => prevState - 1)
-  // }
-
-  // const reset = () => {
-    // setCount(0)
 
 
