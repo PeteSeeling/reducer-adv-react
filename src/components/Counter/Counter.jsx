@@ -1,4 +1,5 @@
 import { useReducer } from 'react';
+import styles from './Styles.counter.css'
 
 const color = {
   green: `rgb(52, 211, 153)`,
@@ -48,6 +49,7 @@ return (
       </button>
       <button
         type="button"
+        id='button'
         onClick={() => dispatch({ type: 'decrement' })}
         aria-label="decrement"
         style={{ backgroundColor: color.red}}
@@ -56,6 +58,7 @@ return (
       </button>
       <button
         type="button"
+        id='button'
         aria-label="reset"
         onClick={() => dispatch({ type: 'reset' })}
         style={{ backgroundColor: color.pink}}
