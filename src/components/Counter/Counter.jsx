@@ -1,5 +1,5 @@
 import { useReducer } from 'react';
-import styles from './Styles.counter.css'
+
 
 const color = {
   green: `rgb(52, 211, 153)`,
@@ -20,8 +20,10 @@ function reducer(state, action){
 switch (action.type) {
   case 'increment':
     return { count: state.count + 1, currentColor: findColor(state.count + 1) };
+
     case 'decrement':
       return { count: state.count - 1,  currentColor: findColor(state.count - 1) };
+
       case 'reset':
         return { count: 0, currentColor: findColor(0) };
           default: 
@@ -37,6 +39,7 @@ return (
     <h1 className="mb-5" style={{ color: state.currentColor }}>
       {state.count}
     </h1>
+
     <div className="flex w-1/2 justify-around">
       <button
         id='button'
@@ -47,6 +50,7 @@ return (
       >
         Increment
       </button>
+
       <button
         type="button"
         id='button'
@@ -56,6 +60,7 @@ return (
       >
         Decrement
       </button>
+
       <button
         type="button"
         id='button'
